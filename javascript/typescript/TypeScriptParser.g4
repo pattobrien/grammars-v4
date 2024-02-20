@@ -277,6 +277,10 @@ interfaceDeclaration
     : Export? Declare? Interface Identifier typeParameters? interfaceExtendsClause? objectType SemiColon?
     ;
 
+moduleDeclaration
+    : 'declare' 'module' StringLiteral '{' statementList? '}'
+    ;
+
 interfaceExtendsClause
     : Extends classOrInterfaceTypeList
     ;
@@ -373,6 +377,7 @@ statement
     | variableStatement
     | typeAliasDeclaration //ADDED
     | enumDeclaration      //ADDED
+    | moduleDeclaration
     | expressionStatement
     | Export statement
     ;
